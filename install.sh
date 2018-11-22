@@ -7,11 +7,11 @@ apt update
 apt install flex bison libcurses-dev librealine-dev
 
 # download bird
-wget -O bird.tar.gz ftp://bird.network.cz/pub/bird/bird-{$VERSION}.tar.gz
+wget -O bird.tar.gz ftp://bird.network.cz/pub/bird/bird-$VERSION.tar.gz
 
 tar xvzf bird.tar.gz
 
-cd bird
+cd bird-$VERSION
 
 ./configure
 
@@ -20,5 +20,7 @@ make install
 
 cd ..
 
-cp -r etc /
-cp -r lib /
+cp -r etc/bird /etc/
+cp lib/systemd/system/* /lib/systemd/system/
+
+useradd bird
