@@ -4,7 +4,7 @@ VERSION=2.0.2
 
 # install dependencies
 apt update
-apt install flex bison libcurses-dev librealine-dev
+apt install flex bison libncurses-dev libreadline-dev
 
 # download bird
 wget -O bird.tar.gz ftp://bird.network.cz/pub/bird/bird-$VERSION.tar.gz
